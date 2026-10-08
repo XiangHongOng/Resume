@@ -1,0 +1,37 @@
+# LaTeX auxiliary files
+*.aux
+*.bbl
+*.bcf
+*.blg
+*.fdb_latexmk
+*.fls
+*.log
+*.out
+*.run.xml
+*.synctex.gz
+*.synctex(busy)
+*.toc
+*.lof
+*.lot
+*.nav
+*.snm
+*.vrb
+*.xdv
+*.dvi
+*-blx.bib
+*.figlist
+*.makefile
+*.auxlock
+_minted*/
+
+# Build output directories
+build/
+out/
+
+# Editor / OS files
+.vscode/
+*.swp
+*~
+.DS_Store
+Thumbs.db
+desktop.ini
