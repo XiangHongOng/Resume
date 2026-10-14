@@ -85,9 +85,10 @@
 \newcommand{\resumeSubItem}[2]{\resumeItem{#1}{#2}\vspace{-4pt}}
 
 \renewcommand{\labelitemi}{$\bullet$} % default textcomp bullet has no Unicode map, ATS reads it as U+0088
-\renewcommand{\labelitemii}{$\circ$}
+\renewcommand{\labelitemii}{$\bullet$} % plain bullet; older ATS mangle the white bullet
 
-\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=*]}
+% headings carry no bullet so ATS doesn't read employers as achievements
+\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=0.15in, label={}]}
 \newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
 \newcommand{\resumeItemListStart}{\begin{itemize}}
 \newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-5pt}}
@@ -99,11 +100,12 @@
 \begin{document}
 
 %----------HEADING-----------------
-\begin{tabular*}{\textwidth}{l@{\extracolsep{\fill}}r}
-  \textbf{\Large Hong Ong} & Email: \href{mailto:o.xianghong@gmail.com}{o.xianghong@gmail.com}\\
-  \href{https://linkedin.com/in/hong-ong-980720238}{linkedin.com/in/hong-ong-980720238} & Mobile: \href{tel:+61449025161}{+61 449 025 161} \\
-  \href{https://github.com/XiangHongOng}{github.com/XiangHongOng} & Sydney, NSW, Australia \\
-\end{tabular*}
+% name alone on line 1 so ATS name detection picks it up cleanly
+\begin{center}
+  {\Large \textbf{Hong Ong}} \\ \vspace{2pt}
+  \small Sydney, NSW, Australia $|$ \href{tel:+61449025161}{+61 449 025 161} $|$ \href{mailto:o.xianghong@gmail.com}{o.xianghong@gmail.com} \\
+  \href{https://linkedin.com/in/hong-ong-980720238}{linkedin.com/in/hong-ong-980720238} $|$ \href{https://github.com/XiangHongOng}{github.com/XiangHongOng}
+\end{center}
 
 
 %-----------SUMMARY-----------------
