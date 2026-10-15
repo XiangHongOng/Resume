@@ -1,7 +1,7 @@
 %-------------------------
 % Resume in LaTeX
 % Author: Hong Ong
-% Based on: https://github.com/sb2nov/resume by Sourabh Bajaj
+% Based on: https://github.com/sb2nov/resume by Sourabh Bajaj and Jake's Resume Layout
 % License: MIT (template)
 %-------------------------
 
@@ -47,42 +47,34 @@
 \hypersetup{pdftitle={Hong Ong - Software Engineer Resume}, pdfauthor={Hong Ong}}
 
 %-------------------------
-% Custom commands
-\newcommand{\resumeItem}[2]{
-  \item\small{
-    \textbf{#1}{: #2 \vspace{-2pt}}
-  }
-}
-
-% Just in case someone needs a heading that does not need to be in a list
-\newcommand{\resumeHeading}[4]{
-    \begin{tabular*}{0.99\textwidth}[t]{l@{\extracolsep{\fill}}r}
-      \textbf{#1} & #2 \\
-      \textit{\small #3} & \textit{\small #4} \\
-    \end{tabular*}\vspace{-5pt}
-}
-
-\newcommand{\resumeSubheading}[4]{
-  \vspace{-1pt}\item
-    \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
-      \textbf{#1} & #2 \\
-      \textit{\small #3} & \textit{\small #4} \\
-    \end{tabular*}\vspace{-5pt}
-}
-
-\newcommand{\resumeSubSubheading}[2]{
-    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
-      \textit{\small #1} & \textit{\small #2} \\
-    \end{tabular*}\vspace{-5pt}
-}
-
-\newcommand{\resumeItemPlain}[1]{
+% Custom commands (Jake's Resume layout)
+\newcommand{\resumeItem}[1]{
   \item\small{
     {#1 \vspace{-2pt}}
   }
 }
 
-\newcommand{\resumeSubItem}[2]{\resumeItem{#1}{#2}\vspace{-4pt}}
+\newcommand{\resumeSubheading}[4]{
+  \vspace{-2pt}\item
+    \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
+      \textbf{#1} & #2 \\
+      \textit{\small#3} & \textit{\small #4} \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeSubSubheading}[2]{
+    \item
+    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+      \textit{\small#1} & \textit{\small #2} \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeProjectHeading}[2]{
+    \item
+    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+      \small#1 & #2 \\
+    \end{tabular*}\vspace{-7pt}
+}
 
 \renewcommand{\labelitemi}{$\bullet$} % default textcomp bullet has no Unicode map, ATS reads it as U+0088
 \renewcommand{\labelitemii}{$\bullet$} % plain bullet; older ATS mangle the white bullet
@@ -101,16 +93,18 @@
 
 %----------HEADING-----------------
 % name alone on line 1 so ATS name detection picks it up cleanly
+% no \scshape on the name: Computer Modern has no bold small caps
 \begin{center}
-  {\Large \textbf{Hong Ong}} \\ \vspace{2pt}
-  \small Sydney, NSW, Australia $|$ \href{tel:+61449025161}{+61 449 025 161} $|$ \href{mailto:o.xianghong@gmail.com}{o.xianghong@gmail.com} \\
-  \href{https://linkedin.com/in/hong-ong-980720238}{linkedin.com/in/hong-ong-980720238} $|$ \href{https://github.com/XiangHongOng}{github.com/XiangHongOng}
+    \textbf{\Huge Hong Ong} \\ \vspace{1pt}
+    \small Sydney, NSW $|$ \href{tel:+61449025161}{+61 449 025 161} $|$ \href{mailto:o.xianghong@gmail.com}{\underline{o.xianghong@gmail.com}} \\
+    \href{https://linkedin.com/in/hong-ong-980720238}{\underline{linkedin.com/in/hong-ong-980720238}} $|$
+    \href{https://github.com/XiangHongOng}{\underline{github.com/XiangHongOng}}
 \end{center}
 
 
 %-----------SUMMARY-----------------
 \section{Professional Summary}
-  \small{Software Engineering graduate (First Class Honours, UTS) with nearly a year of production experience. Sole software engineer on OnlyFacts' Ruby on Rails/PostgreSQL climate data platform, and developer on The a2 Milk Company's multi-market Astro/TypeScript websites. Full-stack across data pipelines, APIs, CMS-driven components, localisation and automated testing, with hands-on experience maintaining CI/CD pipelines.}
+  \small{Software Engineering graduate from UTS with First Class Honours and nearly a year of production experience. Sole software engineer on OnlyFacts' Ruby on Rails/PostgreSQL climate data platform, and developer on The a2 Milk Company's Astro/TypeScript websites across 8 markets. Full-stack across data pipelines, REST APIs, CMS-driven components, localisation and automated testing with Vitest and RSpec.}
 
 
 %-----------EXPERIENCE-----------------
@@ -118,38 +112,38 @@
   \resumeSubHeadingListStart
 
     \resumeSubheading
-      {The a2 Milk Company}{Sydney, NSW}
       {Software Developer (Contract)}{June 2026 -- Present}
+      {The a2 Milk Company}{Sydney, NSW}
       \resumeItemListStart
-        \resumeItemPlain{Developed features for multi-market Astro 5 SSR sites (AU, NZ, SG, HK, VN, CA, US, China) with TypeScript, Kontent.ai (headless CMS), Alpine.js, Algolia and Tailwind CSS on AWS}
-        \resumeItemPlain{Shipped 125+ commits across 3 production repositories, delivering 12+ reusable CMS-driven components with documentation and Vitest unit and smoke tests}
-        \resumeItemPlain{Built a modular article system of 7 CMS-driven components for a health-professional research hub, launching 6 articles to production}
-        \resumeItemPlain{Localised sites for English, Vietnamese and Chinese audiences with a tested UI-label translation utility, and integrated Osano cookie consent and GTM}
+        \resumeItem{Developed features for multi-market Astro 5 SSR sites (AU, NZ, SG, HK, VN, CA, US, China) with TypeScript, Kontent.ai (headless CMS), Alpine.js, Algolia and Tailwind CSS on AWS}
+        \resumeItem{Shipped 125+ commits across 3 production repositories, delivering 12+ reusable CMS-driven components with documentation and Vitest unit and smoke tests}
+        \resumeItem{Built a modular article system of 7 CMS-driven components for a health-professional research hub, launching 6 articles to production}
+        \resumeItem{Added Vietnamese and Chinese language support to UI labels, filters and layouts on regional sites, and integrated Osano cookie consent and GTM}
         \resumeItemListEnd
 
     \resumeSubheading
-      {OnlyFacts}{Sydney, NSW}
       {Full-Stack Engineer (Contract)}{January 2026 -- Present}
+      {OnlyFacts}{Sydney, NSW}
       \resumeItemListStart
-        \resumeItemPlain{Managed all engineering on the Ruby on Rails/PostgreSQL climate data platform as sole software engineer since mid-2026, working with a 4--6 person data team}
-        \resumeItemPlain{Replaced Highcharts maps with a custom D3.js engine (council-area and world maps, hexbin view, zoom, legend) and refactored 1,300+ lines of legacy code}
-        \resumeItemPlain{Developed data pipelines: web scrapers (vehicle sales, carbon credits) and recurring import jobs for emissions and energy datasets}
-        \resumeItemPlain{Shipped a Cloudflare Worker contact API (validation, Google Sheets logging, email alerts, CORS allowlist) and GA4 event tracking for the live React/Vite OnlyFacts Studio site}
+        \resumeItem{Managed all engineering on the Ruby on Rails/PostgreSQL climate data platform as sole software engineer since mid-2026, working with a 4--6 person data team}
+        \resumeItem{Replaced Highcharts maps with a custom D3.js engine (council-area and world maps, hexbin view, zoom, legend) and refactored 1,300+ lines of legacy code}
+        \resumeItem{Built web scrapers and daily and quarterly import jobs for 7 data sources, with email alerts on new releases that replaced the data team's manual checks}
+        \resumeItem{Shipped a Cloudflare Worker contact API (validation, Google Sheets logging, email alerts, CORS allowlist) and GA4 event tracking for the live React/Vite OnlyFacts Studio site}
       \resumeItemListEnd
 
     \resumeSubSubheading
       {Software Engineering Intern}{November 2025 -- January 2026}
       \resumeItemListStart
-        \resumeItemPlain{Built and presented 3 feature prototypes to stakeholders, which informed later architecture decisions}
-        \resumeItemPlain{Identified technical debt and maintainability issues in the legacy codebase and presented improvement recommendations adopted in later development}
+        \resumeItem{Prototyped interactive D3.js/TopoJSON maps with tooltips and data normalisation, later extended into the production map engine}
       \resumeItemListEnd
 
     \resumeSubheading
-      {Optik Consultancy (Philips Dynalite)}{Sydney, NSW}
       {Software Engineering Consultant}{May 2024 -- February 2025}
+      {Optik Consultancy (Philips Dynalite)}{Sydney, NSW}
       \resumeItemListStart
-        \resumeItemPlain{Led a 4--5 person team of software and mechanical engineers to deliver client automation solutions on time and within budget}
-        \resumeItemPlain{Programmed OMRON TM5 cobot using TM FLOW to automate relay/terminal placement, cutting production time by 40\% and error rates by 60\%}
+        \resumeItem{Led a 4--5 person team of software and mechanical engineers to deliver client automation solutions on time and within budget}
+        \resumeItem{Programmed OMRON TM5 cobot using TM FLOW to automate relay/terminal placement, cutting production time by 40\% and error rates by 60\%}
+        \resumeItem{Reviewed 5 software projects for progress against project goals and quality standards}
       \resumeItemListEnd
 
   \resumeSubHeadingListEnd
@@ -162,9 +156,9 @@
       {University of Technology Sydney}{Sydney, NSW}
       {Bachelor of Engineering (Honours), Software Engineering}{February 2022 -- December 2025}
       \resumeItemListStart
-        \resumeItemPlain{First Class Honours $|$ WAM: 87.10 (High Distinction Average) $|$ GPA: 6.59/7.0 $|$ Dean's List (3 consecutive years) $|$ Undergraduate Academic Excellence International Scholarship}
-        \resumeItemPlain{Honours Capstone (HD, showcase nominee): built a C++/Python AST-based plagiarism detector that flagged 8 confirmed misconduct cases over 406 submissions, 73\% faster with 73\% less storage than text matching}
-        \resumeItemPlain{Relevant Coursework: Database Fundamentals (100), Cloud Computing \& SaaS (97), Software Innovation Studio (96), Software Analysis Studio (94), Software Architecture (93), Systems Testing and Quality Management (89)}
+        \resumeItem{First Class Honours $|$ WAM: 87.10 (High Distinction Average) $|$ GPA: 6.59/7.0 $|$ Dean's List (3 consecutive years) $|$ Undergraduate Academic Excellence International Scholarship}
+        \resumeItem{Honours Capstone (HD, showcase nominee): built a C++/Python AST-based plagiarism detector that flagged 8 confirmed misconduct cases over 406 submissions, 73\% faster with 73\% less storage than text matching}
+        \resumeItem{Relevant Coursework: Database Fundamentals (100), Cloud Computing \& SaaS (97), Software Innovation Studio (96), Software Analysis Studio (94), Software Architecture (93), Systems Testing and Quality Management (89)}
       \resumeItemListEnd
   \resumeSubHeadingListEnd
 
@@ -172,21 +166,19 @@
 %-----------PROJECTS-----------------
 \section{Projects}
   \resumeSubHeadingListStart
-    \resumeSubheading
-      {VR Career Exploration: Lifeguard Simulation}{August 2025 -- December 2025}
-      {Lead Programmer \& VR Developer}{}
+    \resumeProjectHeading
+      {\textbf{VR Career Exploration: Lifeguard Simulation} $|$ \emph{Unity, C\#, XR Toolkit}}{August 2025 -- December 2025}
       \resumeItemListStart
-        \resumeItemPlain{Built immersive VR training simulation in Unity/C\# using XR Interaction Toolkit; implemented a VR controller-based selection system with haptic, audio, and visual feedback cues, achieving 95\% selection accuracy among first-time users during a live showcase}
-        \resumeItemPlain{Developed a dynamic NPC system with randomised spawning; optimised performance for VR headsets using object pooling and reduced draw calls during NPC interactions, cutting frame drops by roughly 50\% measured via Unity profiler}
-        \resumeItemPlain{Led a 7-person Agile team, conducting code reviews and technical QA across 3D modelling, animation, and UI work}
+        \resumeItem{Built a VR training simulation in Unity/C\# with XR Interaction Toolkit and a controller-based selection system with haptic, audio and visual cues that reached 95\% selection accuracy for first-time users at a live showcase}
+        \resumeItem{Developed an NPC system with randomised spawning and optimised it for VR headsets with object pooling and fewer draw calls, cutting frame drops by about 50\% (Unity profiler)}
+        \resumeItem{Led a 7-person Agile team to People's Choice and Best Trailer (class showcase), running code reviews and technical QA across 3D modelling, animation and UI}
       \resumeItemListEnd
 
-    \resumeSubheading
-      {Thrive X Mobile App Prototype}{February 2025 -- April 2025}
-      {Full-Stack Developer}{}
+    \resumeProjectHeading
+      {\textbf{Thrive X Mobile App Prototype} $|$ \emph{Flutter, Dart, Firebase, Google Gemini API}}{February 2025 -- April 2025}
       \resumeItemListStart
-        \resumeItemPlain{Built a cross-platform mobile app in Flutter (Dart) integrating Google Gemini API to power AI-driven skill assessments and personalised feedback, spanning front-end, REST APIs, Firebase, and AI workflow orchestration}
-        \resumeItemPlain{Implemented real-time data sync via Firebase (30\% faster load times), RESTful API integration, and user authentication/profile management}
+        \resumeItem{Built a cross-platform Flutter (Dart) mobile app with the Google Gemini API for AI-driven skill assessments and personalised feedback}
+        \resumeItem{Implemented real-time data sync via Firebase (30\% faster load times), RESTful API integration, and user authentication/profile management}
       \resumeItemListEnd
   \resumeSubHeadingListEnd
 
@@ -195,34 +187,29 @@
 \section{Leadership Activities}
   \resumeSubHeadingListStart
     \resumeSubheading
-      {UTS Malaysian and Singaporean Students' Association (MASSA)}{Sydney, NSW}
       {Treasurer}{November 2022 -- June 2024}
+      {UTS Malaysian and Singaporean Students' Association (MASSA)}{Sydney, NSW}
       \resumeItemListStart
-        \resumeItemPlain{Managed \$40,000+ budget across 20+ events, consistently achieving break-even or profit targets through strategic financial planning and resource allocation}
+        \resumeItem{Managed a \$40,000+ budget across 20+ events and consistently broke even or made a profit}
       \resumeItemListEnd
   \resumeSubHeadingListEnd
 
 
 %--------SKILLS------------
-\section{Technical Skills}
-  \resumeSubHeadingListStart
-    \resumeItem{Programming Languages}{JavaScript, TypeScript, Ruby, Python, SQL, Java, C, C\#, C++}
-    \resumeItem{Frameworks}{Ruby on Rails, ReactJS, Node.js, Astro, Alpine.js, Flutter, D3.js, Tailwind CSS}
-    \resumeItem{CMS \& Search}{Kontent.ai (headless CMS), Algolia}
-    \resumeItem{APIs \& Architecture}{RESTful API design \& integration, MVC, object-oriented programming (OOP), background job processing (Heroku Scheduler)}
-    \resumeItem{Databases}{PostgreSQL, MySQL, Firebase Realtime Database}
-    \resumeItem{Cloud}{AWS (CloudFront, Elastic Beanstalk, CodeBuild, S3), Google Cloud Platform (GCP)}
-    \resumeItem{DevOps}{Git, GitHub, Docker, CI/CD pipelines (GitHub Actions, AWS CodeBuild), Agile/Scrum, VS Code, JetBrains Suite}
-    \resumeItem{Testing}{Unit \& integration testing, test-driven development (TDD); pytest, Google Test (C++) from coursework and personal projects}
-    \resumeItem{AI \& Developer Tooling}{Google Gemini, Claude (Claude Code), AI workflow integration, GitHub Actions automation}
-  \resumeSubHeadingListEnd
-
-
-%--------LANGUAGES------------
-\section{Languages}
-  \resumeSubHeadingListStart
-    \resumeItem{Spoken Languages}{English, French (Fluent); Vietnamese, Mandarin, Cantonese (Basic)}
-  \resumeSubHeadingListEnd
+\section{Skills}
+ \begin{itemize}[leftmargin=0.15in, label={}]
+    \small{\item{
+     \textbf{Languages}{: TypeScript, JavaScript, Ruby, SQL, Python, C++, C\#} \\
+     \textbf{Frontend}{: Astro, React, Alpine.js, Stimulus/Turbo, D3.js, Tailwind CSS, Flutter} \\
+     \textbf{Backend}{: Ruby on Rails, REST APIs, Cloudflare Workers, background jobs (Solid Queue, Heroku), web scraping} \\
+     \textbf{Data \& CMS}{: PostgreSQL, Firebase, Kontent.ai (headless CMS), Algolia} \\
+     \textbf{Cloud}{: AWS (CloudFront, Elastic Beanstalk, CodeBuild, S3), Heroku, Cloudflare, GCP} \\
+     \textbf{Testing}{: Vitest, RSpec (unit \& integration)} \\
+     \textbf{DevOps \& Tools}{: Git, CI/CD (GitHub Actions, AWS CodeBuild), Docker Compose, Agile/Scrum, Claude Code} \\
+     \textbf{Analytics}{: GA4, GTM, Osano cookie consent} \\
+     \textbf{Spoken Languages}{: English, French (fluent), Vietnamese, Mandarin, Cantonese (basic)}
+    }}
+ \end{itemize}
 
 
 %-------------------------------------------
